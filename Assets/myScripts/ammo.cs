@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class ammo : MonoBehaviour
+public class Ammo : MonoBehaviour
 {
 
     public bool willDestroy = true;
+    public Gun Owner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,13 +18,23 @@ public class ammo : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        ContactPoint contact = collision.contacts[0];
+        if (willDestroy) 
+        {
+            Gun otherGun = collision.gameObject.GetComponentInParent<Gun>(); 
+            if (otherGun == Owner )
+            {
+                return; 
+            }    
 
-        // Rotate the object so that the y-axis faces along the normal of the surface
-        Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
-        Vector3 pos = contact.point;
-        if (willDestroy) { 
+
             Destroy(gameObject);
         }
+    }
+
+    public void HitTarget(Target whatIHit)
+    {
+
+        Debug.Log(whatIHit.name);
+
     }
 }

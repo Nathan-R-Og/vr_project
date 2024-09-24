@@ -3,14 +3,19 @@ using System.Collections;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using System.Linq;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class gun : MonoBehaviour
+public class Gun : MonoBehaviour
 {
-    public ammo myProjectile;
+    public Ammo myProjectile;
     public GameObject shootPosition;
     public float force = 5;
-    public ammo[] shot;
+    public Ammo[] shot;
     public bool destroyAmmo = true;
+
+
+
+    public Player Owner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +27,7 @@ public class gun : MonoBehaviour
     {
         for(int i = 0; i < shot.Length; i++)
         {
-            ammo clone = shot[i];
+            Ammo clone = shot[i];
 
 
 
@@ -30,15 +35,19 @@ public class gun : MonoBehaviour
         }
     }
 
-    public void Shut()
+    public void Shoot()
     {
-        
-        ammo clone = Instantiate(myProjectile, shootPosition.transform.position, transform.rotation);
+        Ammo clone = Instantiate(myProjectile, shootPosition.transform.position, shootPosition.transform.rotation);
+
         clone.willDestroy = destroyAmmo;
+
         Rigidbody rb = clone.GetComponent<Rigidbody>();
         rb.linearVelocity = shootPosition.transform.forward * force;
+
         shot.Append(clone);
-        //Debug.Log(rb.linearVelocity);
+
+        clone.Owner = this;
+        
 
     }
 
@@ -53,4 +62,6 @@ public class gun : MonoBehaviour
         Rigidbody myRb = GetComponent<Rigidbody>();
         myRb.linearVelocity = new Vector3(0,0,0);
     }
+
+
 }

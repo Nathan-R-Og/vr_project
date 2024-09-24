@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3644228304152905782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.039, z: 0.373}
+  m_LocalPosition: {x: 0, y: 0.039, z: 0.332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,6 +96,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -108,24 +112,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Shut
+      value: Shoot
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2896751708470808161}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GiveGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: gun, Assembly-CSharp
+      value: Gun, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Gun, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Gun, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -135,21 +171,25 @@ PrefabInstance:
       propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5066365915309006256, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5287248408654313296, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5287248408654313296, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.469
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287248408654313296, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9508
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287248408654313296, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.161
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5287248408654313296, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -233,7 +273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884fb100cedee6b4fbbf8e362bb12ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myProjectile: {fileID: 174067379570882618, guid: 2acb9b289e9d18c4c8735a54ee103f73, type: 3}
+  myProjectile: {fileID: 174067379570882618, guid: a25c2ccad03660342848da0b801b9f70, type: 3}
   shootPosition: {fileID: 3644228304152905782}
   force: 5
   shot: []
+  destroyAmmo: 1
+  Owner: {fileID: 0}
