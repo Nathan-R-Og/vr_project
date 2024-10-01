@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ammo : MonoBehaviour
@@ -18,23 +19,28 @@ public class Ammo : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (willDestroy) 
+        Ammo ammo = collision.gameObject.GetComponent<Ammo>();
+        Gun gun = collision.gameObject.GetComponent<Gun>();
+        if ((ammo != null) || (gun != null))
         {
-            Gun otherGun = collision.gameObject.GetComponentInParent<Gun>(); 
-            if (otherGun == Owner )
-            {
-                return; 
-            }    
+            return; 
+        }
 
-
-            Destroy(gameObject);
+        if (willDestroy)
+        {
+            DoDelete();
         }
     }
 
-    public void HitTarget(Target whatIHit)
+    public virtual void HitTarget(Target whatIHit)
     {
 
         Debug.Log(whatIHit.name);
 
+    }
+
+    public virtual void DoDelete()
+    {
+        Destroy(gameObject);
     }
 }

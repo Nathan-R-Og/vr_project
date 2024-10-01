@@ -1361,6 +1361,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 817075156}
     m_Modifications:
+    - target: {fileID: 2896751708470808161, guid: ed7143c46c81efd4d9ab1ebb2bc712e8, type: 3}
+      propertyPath: destroyAmmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896751708470808161, guid: ed7143c46c81efd4d9ab1ebb2bc712e8, type: 3}
+      propertyPath: myProjectile
+      value: 
+      objectReference: {fileID: 174067379570882618, guid: 2acb9b289e9d18c4c8735a54ee103f73, type: 3}
     - target: {fileID: 6972647769073187060, guid: ed7143c46c81efd4d9ab1ebb2bc712e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2010,6 +2018,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+  m_SelectingCharacterController: {fileID: 0}
 --- !u!65 &220858518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4709,6 +4718,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+  m_SelectingCharacterController: {fileID: 0}
 --- !u!54 &546380352
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7115,6 +7125,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
+  m_SelectingCharacterController: {fileID: 0}
 --- !u!65 &807051353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12993,6 +13004,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6233600418098557749, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8072890477496077224, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13344,6 +13359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 817075156}
     m_Modifications:
+    - target: {fileID: 2896751708470808161, guid: ed7143c46c81efd4d9ab1ebb2bc712e8, type: 3}
+      propertyPath: destroyAmmo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6972647769073187060, guid: ed7143c46c81efd4d9ab1ebb2bc712e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.131
@@ -16917,6 +16936,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6233600418098557749, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233600418098557749, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6477512983158778462, guid: 085ce58b196caa446a8545c9dd388793, type: 3}
