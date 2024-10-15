@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -35,19 +36,23 @@ public class Target : MonoBehaviour
         movementParent = new GameObject("TARGET_PARENT_" + gameObject.name);
         transform.SetParent(movementParent.transform, true);
         Animator mator = movementParent.AddComponent<Animator>();
-        if (mator != null)
+        mator.runtimeAnimatorController = animSet;
+        mator.applyRootMotion = true;
+        //this was used but doesnt allow for reversal
+        //mator.speed = speedScale;
+        mator.SetFloat("internalWay", speedScale);
+        if (speedScale < 0.0f)
         {
-            mator.runtimeAnimatorController = animSet;
-            mator.applyRootMotion = true;
-            //RuntimeAnimatorController controller = mator.runtimeAnimatorController;
-            //AnimationClip[] all = controller.animationClips;
-            mator.speed = speedScale;
+            //if backwards, start at end
+            mator.Play(AnimName, 0, 1.0f);
+        }
+        else { 
             mator.Play(AnimName, 0);
-            animFinish allFinish = mator.GetBehaviour<animFinish>();
-            if (allFinish != null)
-            {
-                allFinish.target = this;
-            }
+        }
+        animFinish allFinish = mator.GetBehaviour<animFinish>();
+        if (allFinish != null)
+        {
+            allFinish.target = this;
         }
     }
 
@@ -93,7 +98,7 @@ public class Target : MonoBehaviour
     //ran when leaving without getting hit
     public virtual void LeaveScene()
     {
-        Debug.Log("OOGA"+gameObject.name);
+        //Debug.Log("OOGA"+gameObject.name);
         Destroy(gameObject);
     }
 
