@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 500488372910171181}
   - component: {fileID: 4886634774928819687}
   - component: {fileID: 7480314171747765635}
-  - component: {fileID: 174067379570882618}
+  - component: {fileID: 8741378357951926663}
   m_Layer: 0
   m_Name: ammoNoGrab
   m_TagString: Untagged
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &174067379570882618
+--- !u!114 &8741378357951926663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,3 +151,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   willDestroy: 1
   Owner: {fileID: 0}
+  gravity: {x: 0, y: -9.81, z: 0}

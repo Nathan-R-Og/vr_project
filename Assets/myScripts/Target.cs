@@ -20,23 +20,32 @@ public class Target : MonoBehaviour
     public Effect myEffect = Effect.SCORE;
     public GameObject movementParent = null;
     public RuntimeAnimatorController animSet = null;
+    public float speedScale = 1.0f;
 
     public float myScore = 100.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlayAnimation("Move");
+    }
+
+    public void PlayAnimation(string AnimName)
+    {
         movementParent = new GameObject("TARGET_PARENT_" + gameObject.name);
         transform.SetParent(movementParent.transform, true);
         Animator mator = movementParent.AddComponent<Animator>();
-        mator.runtimeAnimatorController = animSet;
         if (mator != null)
         {
+            mator.runtimeAnimatorController = animSet;
+            mator.applyRootMotion = true;
             //RuntimeAnimatorController controller = mator.runtimeAnimatorController;
             //AnimationClip[] all = controller.animationClips;
-            mator.Play("Move", 0);
+            mator.speed = speedScale;
+            mator.Play(AnimName, 0);
             animFinish allFinish = mator.GetBehaviour<animFinish>();
-            if (allFinish != null) { 
+            if (allFinish != null)
+            {
                 allFinish.target = this;
             }
         }

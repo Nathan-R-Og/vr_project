@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 7480314171747765635}
   - component: {fileID: 1772311641806512474}
   - component: {fileID: 5596152269391146613}
-  - component: {fileID: 174067379570882618}
+  - component: {fileID: 3362091074821518135}
   m_Layer: 0
   m_Name: ammo1
   m_TagString: Untagged
@@ -401,7 +401,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 28.59177, y: 28.59177, z: 28.59177}
+  m_LocalScale: {x: 8.59177, y: 8.59177, z: 8.59177}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8751574687849098803}
@@ -489,7 +489,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6151056386112403858}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
---- !u!114 &174067379570882618
+--- !u!114 &3362091074821518135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -666,4 +666,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   willDestroy: 1
-  shotfrom: {fileID: 0}
+  Owner: {fileID: 0}
+  gravity: {x: 0, y: -9.81, z: 0}

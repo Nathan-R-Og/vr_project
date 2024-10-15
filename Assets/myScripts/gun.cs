@@ -6,6 +6,8 @@ using System.Linq;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using System.Collections.Generic;
+using static UnityEngine.Rendering.GPUSort;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Gun : MonoBehaviour
 {
@@ -44,31 +46,38 @@ public class Gun : MonoBehaviour
     }
 
     //god giveth
-    public void GiveGun()
+    public void GiveGun(SelectEnterEventArgs args)
     {
         XRGrabInteractable core = GetComponent<XRGrabInteractable>();
         if (core != null)
         {
-            Player realCore = core.m_SelectingCharacterController.GetComponent<Player>();
-            if (realCore != null)
-            {
-                realCore.guns.Add(this);
-                Owner = realCore;
+            CharacterController my_SelectingCharacterController = args.interactorObject.transform.GetComponentInParent<CharacterController>();
+            if (my_SelectingCharacterController != null) { 
+                Player realCore = my_SelectingCharacterController.GetComponent<Player>();
+                if (realCore != null)
+                {
+                    realCore.guns.Add(this);
+                    Owner = realCore;
+                }
             }
         }
     }
 
     //and god taketh away
-    public void LoseGun()
+    public void LoseGun(SelectExitEventArgs args)
     {
         XRGrabInteractable core = GetComponent<XRGrabInteractable>();
         if (core != null)
         {
-            Player realCore = core.m_SelectingCharacterController.GetComponent<Player>();
-            if (realCore != null && realCore == Owner)
+            CharacterController my_SelectingCharacterController = args.interactorObject.transform.GetComponentInParent<CharacterController>();
+            if (my_SelectingCharacterController != null)
             {
-                realCore.guns.Remove(this);
-                Owner = null;
+                Player realCore = my_SelectingCharacterController.GetComponent<Player>();
+                if (realCore != null && realCore == Owner)
+                {
+                    realCore.guns.Remove(this);
+                    Owner = null;
+                }
             }
         }
     }

@@ -399,7 +399,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 28.59177, y: 28.59177, z: 28.59177}
+  m_LocalScale: {x: 15.722328, y: 23.661976, z: 2.8963463}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3211828518637691578}
@@ -477,7 +477,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010000001, y: 0.010000002, z: 0.010000001}
+  m_Size: {x: 0.010000001, y: 0.010000002, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8631230856002948261
 Rigidbody:
@@ -503,9 +503,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &1049134857393087257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,4 +521,5 @@ MonoBehaviour:
   myEffect: 1
   movementParent: {fileID: 0}
   animSet: {fileID: 9100000, guid: 65b23b5db675e8e4ea5f8d5dc697ce30, type: 2}
+  speedScale: 1
   myScore: 100
