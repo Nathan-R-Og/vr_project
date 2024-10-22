@@ -20,20 +20,6 @@ public class Gun : MonoBehaviour
 
 
     public Player Owner;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        for(int i = 0; i < shot.Count; i++)
-        {
-            Ammo clone = shot[i];
-        }
-    }
 
     public virtual void Shoot()
     {

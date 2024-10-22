@@ -6,26 +6,19 @@ using UnityEngine.Audio;
 
 public class Target : MonoBehaviour
 {
-
-
     public enum Effect
     {
         NONE = 0,
         SCORE,
         CUSTOM,
-
-
-
     }
 
     public Effect myEffect = Effect.SCORE;
     public GameObject movementParent = null;
     public RuntimeAnimatorController animSet = null;
     public float speedScale = 1.0f;
-
     public float myScore = 100.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         PlayAnimation("Move");
@@ -56,7 +49,6 @@ public class Target : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
 

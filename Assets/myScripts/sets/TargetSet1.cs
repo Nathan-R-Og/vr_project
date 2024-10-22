@@ -30,14 +30,15 @@ public class TargetSet1 : MonoBehaviour
     public List<TargetDoer> commands;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //iterate through all commands
         for (int i = 0; i < commands.Count; i++)
         {
             TargetDoer current = commands[i];
             for (int j = 1; j <= current.copies; j++)
             {
+                //if copies > 0, make a new command copied from the current
                 TargetDoer newClone = new TargetDoer();
                 newClone.rates = current.rates;
                 newClone.animation = current.animation;
@@ -49,18 +50,21 @@ public class TargetSet1 : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //tick by one
         realTime += Time.deltaTime;
         for (int i = 0; i < commands.Count; i++)
         {
             TargetDoer current = commands[i];
+            //if the command hasnt been executed and it is time to execute
             if (current.inTime <= realTime && !current.executed)
             {
+                //execute and get percent range
                 current.executed = true;
                 float pick = UnityEngine.Random.Range(0.0f, 1.0f);
                 
+                //do the pick
                 for(int rate = 0; rate < current.rates.Count; rate++)
                 {
                     if (pick <= current.rates[rate].Rate)
@@ -72,7 +76,6 @@ public class TargetSet1 : MonoBehaviour
                     }
                 }
             }
-
         }
 
     }

@@ -9,18 +9,6 @@ public class Ammo : MonoBehaviour
     public bool hit = false;
     public Gun Owner;
     public Vector3 gravity = new Vector3(0.0f, -9.81f, 0.0f);
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         //custom gravity

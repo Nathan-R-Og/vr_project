@@ -14,8 +14,8 @@ public class animFinish : StateMachineBehaviour
     //    
     //}
 
+    //delete the target on animation finish
     public Target target = null;
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (target != null) {
